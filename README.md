@@ -26,7 +26,7 @@ All the data and python packages are included on the scripts, there is no need t
 
 •	model.pk: saved model.
 
-All these files are in my Gitbub repository: https://github.com/GuilleC1987/Project-2/tree/main
+All these files are in my Github repository: https://github.com/GuilleC1987/Project-2/tree/main
 
 ### Instrucctions:
 In the root directory run the following commands:

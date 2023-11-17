@@ -4,6 +4,10 @@ import numpy as np
 from sqlalchemy import create_engine
 
 def load_data(messages_filepath, categories_filepath):
+    '''
+    INPUT: disaster_categories.csv and disaste_messages.csv path
+    OUTPUT: df dataframe result of the merge of disaster_categories.csv and disaster_messages.csv
+    '''
     # load messages dataset
     messages = pd.read_csv(messages_filepath)
     # load categories dataset
@@ -32,6 +36,10 @@ def load_data(messages_filepath, categories_filepath):
 
 
 def clean_data(df):
+    '''
+    INPUT: df dataframe result of the merge of disaster_categories.csv and disaster_messages.csv
+    OUTPUT: Cleaned df dataframe.
+    '''
     #Slicing df, to only take in consideration values different than 2 in related column
     #Only 188 rows have a value of 2 in related column, less than 1% of the total rows
     df = df[df['related']!=2]
@@ -42,6 +50,10 @@ def clean_data(df):
     return df
 
 def save_data(df, database_filename):
+    '''
+    INPUT: cleaned df
+    OUTPUT: saved database and table
+    '''
     engine = create_engine('sqlite:///'+ database_filename)
     df.to_sql('DisasterResponse', engine, index=False)
     pass
